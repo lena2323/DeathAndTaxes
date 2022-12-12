@@ -1,13 +1,28 @@
-const path = require("path");
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common.js");
-module.exports = merge(common, {
-  mode: "development",
-  devtool: "cheap-source-map",
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const {
+  merge,
+} = require('webpack-merge');
+
+
+const commonConfig = require('./webpack.common');
+
+
+const devConfig = {
+  mode: 'development',
   devServer: {
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-    historyApiFallback: true,
+    port: 8001,
   },
-});
+  plugins: [
+    new HtmlWebpackPlugin({
+      template:
+        './public/index.html',
+    }),
+  ],
+};
+
+
+module.exports = merge(
+  commonConfig,
+  devConfig
+);

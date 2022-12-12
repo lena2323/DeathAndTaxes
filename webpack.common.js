@@ -1,24 +1,26 @@
-const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
-  output: {
-    filename: "bundle.js",
-    path: path.resolve("dist"),
-    publicPath: "/",
-  },
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
-  },
   module: {
     rules: [
       {
-       	test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: "babel-loader"
-
+        test: /\.m?js$/,
+        exclude:
+          /node_modules/,
+        use: {
+          loader:
+            'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-react',
+              '@babel/preset-env',
+            ],
+            plugins: [
+              '@babel/plugin-transform-runtime',
+            ],
+          },
+        },
       },
+      
     ],
-}};
+  },
+};
