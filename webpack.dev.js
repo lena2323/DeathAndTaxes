@@ -16,7 +16,7 @@ const devConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       template:
-        './public/index.html',
+        './dist/index.html',
     }),
     
   ],

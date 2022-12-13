@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist' ),
-    filename: 'budnle.js'
+    filename: 'bundle.js'
   },
 
   module: {
@@ -38,12 +38,7 @@ module.exports = {
     },  
     ],
   },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"
-      )
-    }
-  }
+  
 };
 
 
