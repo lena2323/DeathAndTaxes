@@ -10,7 +10,7 @@ export default function InputFormIncomeYearly(props) {
       setPropertyOwnership,
       setMaritalStatus} = props.submitState;
 
-        
+
   return (
     <div>
       <h1> Only two things are certain, death and taxes</h1>
@@ -18,7 +18,7 @@ export default function InputFormIncomeYearly(props) {
 
       <form  onSubmit={handleSubmit} >
       <label>What is your yearly gross income?</label>
-      <input type="number" min={1} max={1000000000000}  required onChange={e => setGrossIncomeYearly(e.target.value)}></input>
+      <input type="number" min={1} max={1000000000000} required onChange={e => setGrossIncomeYearly(e.target.value)}>{props.resetInputValue}</input>
 
       <label>How many children do you have?</label>
       <input type="number"  min={0} max={150} required onChange={e => setChildrenNumber(e.target.value)}></input>
@@ -32,7 +32,7 @@ export default function InputFormIncomeYearly(props) {
       <option value="single">Single</option>
       <option value="widowOrWidower">Widow/Widower</option>
       </select>
-      < MainButton buttontext = "See results"/>
+      < MainButton buttontext = "See results"  />
 
       </form>
     </div>

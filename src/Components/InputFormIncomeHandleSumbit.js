@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {InputFormIncomeYearly} from "./index";
 
+
 export default function InputFormIncomeHandleSumbit(){
   
   const [grossIncomeYearly, setGrossIncomeYearly] = useState('')
@@ -20,7 +21,7 @@ export default function InputFormIncomeHandleSumbit(){
     }
 
     console.log(newGrossIncomeYearly);
-
+    
   }
 
 
@@ -32,8 +33,9 @@ export default function InputFormIncomeHandleSumbit(){
     setMaritalStatus
   }
 
+
   return (
-    < InputFormIncomeYearly submitState={grossIncomeYearlyData} />
+    < InputFormIncomeYearly submitState={grossIncomeYearlyData} resetInputValue = ""/>
   )
 }
 
