@@ -1,16 +1,12 @@
 import React from 'react'
 import { MainButton } from '../Components/index'
+import { MainCard } from '../Components/index'
 
 const LandingPage = () => {
   return (
-    <div >
+    <div className='container p-5 flex-col text-center items-center bg-neutralbcg mx-auto' >
+       < MainCard />
        < MainButton buttontext = "See results"/>
-       <h1 className=' h-6 w-6 fill-sky-100 stroke-sky-500 stroke-2' >GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG</h1>
-        <h2 className='flex blue'>dddddddddd</h2>
-        <h2>dddddddddd</h2>
-        <h2>dddddddddd</h2>
-        <h2>dddddddddd</h2>
-
     </div>
   )
 }
