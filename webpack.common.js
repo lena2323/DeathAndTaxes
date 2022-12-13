@@ -3,7 +3,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test:  /\.js$|jsx/,
         exclude:
           /node_modules/,
         use: {
@@ -18,9 +18,15 @@ module.exports = {
               '@babel/plugin-transform-runtime',
             ],
           },
+          
         },
+      },
+       {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
       
     ],
+    
   },
 };

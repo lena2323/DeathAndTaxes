@@ -3,8 +3,8 @@ import { MainButton } from '../Components/index'
 
 const LandingPage = () => {
   return (
-    <div>
-       < MainButton buttontext = "See results"/>
+    <div >
+       < MainButton className='flex text-3xl font-bold underline'  buttontext = "See results"/>
     </div>
   )
 }
