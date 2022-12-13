@@ -25,13 +25,12 @@ export default function InputFormIncomeYearly(props) {
       <label>Do you own any properties?</label>
       <input type="number" required min={0} max={100} onChange={e => setPropertyOwnership(e.target.value)} ></input>
 
-      <label for="MaritalStatus">What is your marital status?</label>
+      <label htmlFor="MaritalStatus">What is your marital status?</label>
       <select name='MaritalStatus' required onChange={e => setMaritalStatus(e.target.value)}>
       <option value="married">Married</option>
       <option value="single">Single</option>
       <option value="widowOrWidower">Widow/Widower</option>
       </select>
-
       </form>
     </div>
   )

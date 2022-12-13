@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {InputFormIncomeYearly} from "./index";
 
 export default function InputFormIncomeHandleSumbit(){
   

@@ -3,9 +3,9 @@ import {InputFormIncomeHandleSumbit} from './index'
 
 const MainCard = () => {
   return (
-    <diiv>
+    <div>
     <InputFormIncomeHandleSumbit />
-    </diiv>
+    </div>
   )
 }
 
