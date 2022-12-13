@@ -4,6 +4,11 @@ import {InputFormIncomeYearly} from "./index";
 
 export default function InputFormIncomeHandleSumbit(){
   
+    let targetedGrossIncomeYearly
+    let targedChildrenNumber
+    let targetedpropertyOwnership 
+    let targetedMaritalStatus
+
   const [grossIncomeYearly, setGrossIncomeYearly] = useState('')
   const [childrenNumber, setChildrenNumber] = useState("")
   const [propertyOwnership, setPropertyOwnership] = useState("")
@@ -22,6 +27,14 @@ export default function InputFormIncomeHandleSumbit(){
 
     console.log(newGrossIncomeYearly);
     
+     targetedGrossIncomeYearly = newGrossIncomeYearly.grossIncomeYearly;
+     targedChildrenNumber = newGrossIncomeYearly.childrenNumber;
+     targetedpropertyOwnership = newGrossIncomeYearly.propertyOwnership;
+     targetedMaritalStatus = newGrossIncomeYearly.maritalStatus;
+    
+    console.log(targetedGrossIncomeYearly,targedChildrenNumber, targetedpropertyOwnership, targetedMaritalStatus )
+
+
   }
 
 
@@ -32,10 +45,11 @@ export default function InputFormIncomeHandleSumbit(){
     setPropertyOwnership,
     setMaritalStatus
   }
-
+  
 
   return (
-    < InputFormIncomeYearly submitState={grossIncomeYearlyData} resetInputValue = ""/>
+    
+    < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>
   )
 }
 
