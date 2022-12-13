@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import React from "react";
+import '../dist/output.css'
 
 import {LandingPage, NextPage} from "./Pages/index"
 
