@@ -1,6 +1,5 @@
 import React from 'react'
 import { MainButton } from '../Components/index'
-import { CreateTable } from '../Components/index'
 
 
 export default function InputFormIncomeYearly(props) {
@@ -35,7 +34,6 @@ export default function InputFormIncomeYearly(props) {
       < MainButton buttontext = "See results"  />
 
       </form>
-      <CreateTable first={"r"} />
 
     </div>
   )
