@@ -1,4 +1,5 @@
 import React from 'react'
+import { MainButton } from '../Components/index'
 
 
 export default function InputFormIncomeYearly(props) {
@@ -31,6 +32,8 @@ export default function InputFormIncomeYearly(props) {
       <option value="single">Single</option>
       <option value="widowOrWidower">Widow/Widower</option>
       </select>
+      < MainButton buttontext = "See results"/>
+
       </form>
     </div>
   )
