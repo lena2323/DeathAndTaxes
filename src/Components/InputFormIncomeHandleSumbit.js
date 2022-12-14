@@ -40,7 +40,7 @@ export default function InputFormIncomeHandleSumbit(){
   return (
     <div>
     < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>
-    <CreateTable inputYearlyGrossIncome = {grossIncomeYearly/4} />
+    <CreateTable inputYearlyGrossIncome = {grossIncomeYearly} />
     </div>
   )
 }

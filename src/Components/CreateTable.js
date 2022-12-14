@@ -29,7 +29,7 @@ export default function CreateTable(props){
           < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
           <td className='border  py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
           <td className='border py-3 px-6 '>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
-          <td className='border py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
+          <td className='border py-3 px-6'>{(parseInt(props.inputYearlyGrossIncome) >= 10) ? (props.inputYearlyGrossIncome - 1) : parseInt(props.inputYearlyGrossIncome) + 5 } <a className='float-right'>20% tax</a></td>
           <td className='border py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
           </tr>
 
