@@ -31,10 +31,10 @@ export default function InputFormIncomeHandleSumbit(){
 
     
       if (grossIncomeYearly >= 1000)  {
-        setTax20Percent(grossIncomeYearly*20/100)
+        setTax20Percent(grossIncomeYearly*20/100 +"lala")
       } 
       else if (grossIncomeYearly <=1000) {
-        setTax20Percent(grossIncomeYearly*10/100)
+        setTax20Percent(grossIncomeYearly*10/100 +"blabla")
       } 
 
 
@@ -81,14 +81,14 @@ export default function InputFormIncomeHandleSumbit(){
 
 
           < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
-          <td className='border  py-3 px-6' ><a className='float-right'>{tax20percent}</a></td>
+          <td className='border  py-3 px-6' ><a className='float-right'>{grossIncomeYearly}</a></td>
           <td className='border py-3 px-6 '> <a className='float-right'></a></td>
           <td className='border py-3 px-6'> <a className='float-right'></a></td>
           <td className='border py-3 px-6'><a className='float-right' ></a></td>
           </tr>
 
           < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
-          <td className='border  py-3 px-6'></td>
+          <td className='border  py-3 px-6'>{tax20percent}</td>
 
           <td className='border py-3 px-6 '>
           
