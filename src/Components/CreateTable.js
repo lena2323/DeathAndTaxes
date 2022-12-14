@@ -29,7 +29,7 @@ export default function CreateTable(props){
               <th  className="py-3 px-6">
                   Property ownership
               </th>
-              <th  className="py-3 px-6">
+              <th  className="py-3 px-6"  >
                   Marital status
               </th>
             </tr>
@@ -44,7 +44,7 @@ export default function CreateTable(props){
           <td className='border  py-3 px-6' ><a className='float-right'></a></td>
           <td className='border py-3 px-6 '> <a className='float-right'></a></td>
           <td className='border py-3 px-6'> <a className='float-right'></a></td>
-          <td className='border py-3 px-6'><a className='float-right'></a></td>
+          <td className='border py-3 px-6'><a className='float-right' ></a></td>
           </tr>
 
           < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
