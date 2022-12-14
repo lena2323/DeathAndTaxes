@@ -22,7 +22,7 @@ export default function InputFormIncomeYearly(props) {
       <label>How many children do you have?</label>
       <input type="number"  min={0} max={150} required onChange={e => setChildrenNumber(e.target.value)}></input>
 
-      <label>Do you own any properties?</label>
+      <label>How many properties do you own?</label>
       <input type="number" required min={0} max={100} onChange={e => setPropertyOwnership(e.target.value)} ></input>
 
       <label htmlFor="MaritalStatus">What is your marital status?</label>
