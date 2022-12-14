@@ -26,27 +26,22 @@ export default function CreateTable(props){
           </thead>
 
           <tbody >
+          
+
+
+          < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
+          <td className='border  py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
+          <td className='border py-3 px-6 '>{props.inputNumberOfCHildren} <a className='float-right'>20% tax</a></td>
+          <td className='border py-3 px-6'>{props.inputPropertyOwnership} <a className='float-right'>20% tax</a></td>
+          <td className='border py-3 px-6'>{props.inputMaritalStatus} <a className='float-right'>20% tax</a></td>
+          </tr>
+
           < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
           <td className='border  py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
           <td className='border py-3 px-6 '>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
           <td className='border py-3 px-6'>{(parseInt(props.inputYearlyGrossIncome) >= 10) ? (props.inputYearlyGrossIncome - 1) : parseInt(props.inputYearlyGrossIncome) + 5 } <a className='float-right'>20% tax</a></td>
           <td className='border py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
           </tr>
-
-          < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
-          <td className='border py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
-          <td className='border py-3 px-6  '>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
-          <td className='border py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
-          <td className='border py-3 px-6 ' >{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
-          </tr>
-
-          < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
-          <td className='border  py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
-          <td className='border py-3 px-6 '>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
-          <td className='border py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
-          <td className='border py-3 px-6'>{props.inputYearlyGrossIncome} <a className='float-right'>20% tax</a></td>
-          </tr>
-
           </tbody>    
         </table>
     </div>
