@@ -1,9 +1,16 @@
 import React from 'react'
+import { MainButton } from '../Components/index'
 
 
 
 export default function CreateTable(props){
   
+  let{handleSubmit,
+    setGrossIncomeYearly,
+    setChildrenNumber,
+    setPropertyOwnership,
+    setMaritalStatus} = props.newData;
+
   let inputYearly = parseInt(props.inputYearlyGrossIncome)
   let inputChildren = parseInt(props.inputNumberOfCHildren)
     return (
@@ -53,6 +60,8 @@ export default function CreateTable(props){
           </tr>
           </tbody>    
         </table>
+        <form  onSubmit={handleSubmit} >< MainButton buttontext = "See results"  />
+        </form>
     </div>
   )
 }
