@@ -11,6 +11,10 @@ export default function InputFormIncomeHandleSumbit(){
   const [propertyOwnership, setPropertyOwnership] = useState("")
   const [maritalStatus, setMaritalStatus] = useState("")
 
+  const [tax20percent, setTax20Percent] = useState("")
+
+
+
   const handleSubmit = (event) =>{
     event.preventDefault();
 
@@ -18,32 +22,42 @@ export default function InputFormIncomeHandleSumbit(){
         grossIncomeYearly,
         childrenNumber,
         propertyOwnership,
-        maritalStatus
+        maritalStatus,
+        tax20percent
+        
     }
 
     console.log(newGrossIncomeYearly);
     
 
+
+
+    
+    if (grossIncomeYearly >= 1000)  {
+      setTax20Percent = grossIncomeYearly*20/100;
+    } 
+    else if (grossIncomeYearly <=1000) {
+      setTax20Percent = grossIncomeYearly*10/100;
+    } 
+
+
   }
 
 
-  
   let grossIncomeYearlyData = {
     handleSubmit,
     setGrossIncomeYearly,
     setChildrenNumber,
     setPropertyOwnership,
-    setMaritalStatus
+    setMaritalStatus,
+    setTax20Percent
   }
   
 
   return (
     <div>
     < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>
-    <CreateTable newData ={grossIncomeYearlyData}
-    inputYearlyGrossIncome = {grossIncomeYearly} inputNumberOfCHildren = {childrenNumber}
-    inputPropertyOwnership = {propertyOwnership}
-    inputMaritalStatus = {maritalStatus}
+    <CreateTable newData ={grossIncomeYearlyData} 
     />
     </div>
   )
