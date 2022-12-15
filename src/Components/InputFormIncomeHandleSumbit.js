@@ -62,12 +62,12 @@ export default function InputFormIncomeHandleSumbit(){
 
     
     if (propertyOwnership >= 1)  {
-      setPropertyOwnershipTaxReduction("Your tax is increased by 1% which is exactly "+ grossIncomeYearly*1/100 + " $")
-      propertyReduced = grossIncomeYearly*1/100
+      setPropertyOwnershipTaxReduction("You have no reduction")
+      propertyReduced = 0
     } 
      if (propertyOwnership <= 0) {
-      setPropertyOwnershipTaxReduction( "You have no reduction")
-      propertyReduced = 0
+      setPropertyOwnershipTaxReduction( "Your tax is reduced by 1% which is exactly "+ grossIncomeYearly*1/100 + " $")
+      propertyReduced = grossIncomeYearly*1/100
     } 
 
 
@@ -90,7 +90,7 @@ export default function InputFormIncomeHandleSumbit(){
 
     
 
-    setTotalTax( grossIncomeYearly - ( yearlyIncomeReduced + childReduced + propertyReduced + maritalReduced) )
+    setTotalTax(  yearlyIncomeReduced - (childReduced + propertyReduced + maritalReduced) )
 
   }
 
