@@ -1,0 +1,1 @@
+{"version":3,"file":"styles/main.8b4fca1cedb93f2ac60f.css","mappings":"AAAA,cAAc;AACd,oBAAoB;AACpB,mBAAmB,C","sources":["webpack://deathandtaxes/./src/input.css"],"sourcesContent":["@tailwind base;\r\n@tailwind components;\r\n@tailwind utilities;"],"names":[],"sourceRoot":""}
