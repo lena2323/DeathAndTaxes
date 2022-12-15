@@ -86,7 +86,7 @@ export default function InputFormIncomeHandleSumbit(){
       setMaritalStatusTaxReduction( "You have no reduction")
       maritalReduced = 0
     } 
-    if (maritalStatus == "widowOrWidower")  {
+    if (maritalStatus == "widow/Widower")  {
       setMaritalStatusTaxReduction("Your tax is reduced by 3% which is exactly "+ grossIncomeYearly*3/100 + " $")
       maritalReduced = grossIncomeYearly*3/100
     } 
@@ -118,7 +118,7 @@ export default function InputFormIncomeHandleSumbit(){
   
 
   return (
-    <div>
+    <div className="flex-col max-w-7xl py-3 px-6">
     < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>
     
     <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
@@ -163,7 +163,7 @@ export default function InputFormIncomeHandleSumbit(){
           </tr>
           </tbody>    
         </table>
-        <h1> You owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h1>
+        <h1 className="text-center"> You owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h1>
     </div>
     </div>
   )

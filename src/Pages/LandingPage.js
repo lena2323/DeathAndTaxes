@@ -3,7 +3,7 @@ import { MainCard } from '../Components/index'
 
 const LandingPage = () => {
   return (
-    <div className='container p-5 flex-col text-center items-center bg-neutralbcg mx-auto' >
+    <div className=' flex items-center justify-center h-screen bg-neutralbcg' >
        < MainCard />
     </div>
   )

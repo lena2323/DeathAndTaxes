@@ -11,7 +11,7 @@ export default function InputFormIncomeYearly(props) {
       setMaritalStatus} = props.submitState;
 
   return (
-    <div>
+    <div className=' flex-col items-center justify-center text-center'>
       <h1> Only two things are certain, death and taxes</h1>
       <h2>How much can you scrape for your own funeral?</h2>
 
@@ -27,9 +27,10 @@ export default function InputFormIncomeYearly(props) {
 
       <label htmlFor="MaritalStatus">What is your marital status?</label>
       <select name='MaritalStatus' required onChange={e => setMaritalStatus(e.target.value)}>
+      <option value="none" selected disabled hidden>Select an Option</option>
       <option value="married">Married</option>
       <option value="single">Single</option>
-      <option value="widowOrWidower">Widow/Widower</option>
+      <option value="widow/Widower">Widow/Widower</option>
       </select>
       < MainButton buttontext = "See results"  />
 
