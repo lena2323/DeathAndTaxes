@@ -10,15 +10,19 @@ export default function InputFormIncomeHandleSumbit(){
   let maritalReduced
 
   const [grossIncomeYearly, setGrossIncomeYearly] = useState(0)
-  const [childrenNumber, setChildrenNumber] = useState("")
-  const [propertyOwnership, setPropertyOwnership] = useState("")
+  const [childrenNumber, setChildrenNumber] = useState(0)
+  const [propertyOwnership, setPropertyOwnership] = useState(0)
   const [maritalStatus, setMaritalStatus] = useState("")
 
   const [tax20percent, setTax20Percent] = useState(0)
-  const [childrenTaxReduction, setChildrenTaxReduction] = useState("")
+  const [childrenTaxReduction, setChildrenTaxReduction] = useState(0)
   const [propertyOwnershipTaxReduction, setPropertyOwnershipTaxReduction] = useState(0)
   const [maritalStatusTaxReduction, setMaritalStatusTaxReduction] = useState("")
-  const [totalTax, setTotalTax] = useState("")
+  const [totalTax, setTotalTax] = useState(0)
+  const [totalIncomeAfterTax, setTotalIncomeAfterTax] = useState(0)
+
+  
+
 
   const handleSubmit = (event) =>{
     event.preventDefault();
@@ -32,7 +36,8 @@ export default function InputFormIncomeHandleSumbit(){
         childrenTaxReduction,
         propertyOwnershipTaxReduction,
         maritalStatusTaxReduction,
-        totalTax
+        totalTax,
+        totalIncomeAfterTax
     }
 
     
@@ -92,6 +97,8 @@ export default function InputFormIncomeHandleSumbit(){
 
     setTotalTax(  yearlyIncomeReduced - (childReduced + propertyReduced + maritalReduced) )
 
+    
+    setTotalIncomeAfterTax(grossIncomeYearly -  (yearlyIncomeReduced - (childReduced + propertyReduced + maritalReduced)))
   }
 
 
@@ -105,7 +112,8 @@ export default function InputFormIncomeHandleSumbit(){
     setChildrenTaxReduction,
     setPropertyOwnershipTaxReduction,
     setMaritalStatusTaxReduction,
-    setTotalTax
+    setTotalTax,
+    setTotalIncomeAfterTax
   }
   
 
@@ -155,7 +163,7 @@ export default function InputFormIncomeHandleSumbit(){
           </tr>
           </tbody>    
         </table>
-        <h1> You owe exactly{totalTax}</h1>
+        <h1> You owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h1>
     </div>
     </div>
   )
