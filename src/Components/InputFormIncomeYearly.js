@@ -11,7 +11,7 @@ export default function InputFormIncomeYearly(props) {
       setMaritalStatus} = props.submitState;
 
   return (
-    <div className=' flex-col items-center justify-center text-center'>
+    <div className='  min-[320px]:max-w-sm mx-auto flex-col items-center justify-center text-center'>
       <h1> Only two things are certain, death and taxes</h1>
       <h2>How much can you scrape for your own funeral?</h2>
 
