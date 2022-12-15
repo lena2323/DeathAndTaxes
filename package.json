@@ -6,7 +6,7 @@
   "author": "Milenija Jovicic",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js  && watch:css",
     "start": "webpack-dev-server --config webpack.dev.js && watch:css",
     "watch:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
