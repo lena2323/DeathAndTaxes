@@ -4,6 +4,10 @@ import {InputFormIncomeYearly} from "./index";
 
 export default function InputFormIncomeHandleSumbit(){
   
+  let yearlyIncomeReduced
+  let childReduced
+  let propertyReduced
+  let maritalReduced
 
   const [grossIncomeYearly, setGrossIncomeYearly] = useState(0)
   const [childrenNumber, setChildrenNumber] = useState("")
@@ -14,6 +18,7 @@ export default function InputFormIncomeHandleSumbit(){
   const [childrenTaxReduction, setChildrenTaxReduction] = useState("")
   const [propertyOwnershipTaxReduction, setPropertyOwnershipTaxReduction] = useState(0)
   const [maritalStatusTaxReduction, setMaritalStatusTaxReduction] = useState("")
+  const [totalTax, setTotalTax] = useState("")
 
   const handleSubmit = (event) =>{
     event.preventDefault();
@@ -26,52 +31,66 @@ export default function InputFormIncomeHandleSumbit(){
         tax20percent,
         childrenTaxReduction,
         propertyOwnershipTaxReduction,
-        maritalStatusTaxReduction
+        maritalStatusTaxReduction,
+        totalTax
     }
 
     
 
     if (grossIncomeYearly >= 1000)  {
-      setTax20Percent("Your base for tax is 20%, you owe this country "+ grossIncomeYearly*20/100 + " $")
+      setTax20Percent("Your base for tax is 20%, you owe this country "+ grossIncomeYearly*20/100)
+      yearlyIncomeReduced = grossIncomeYearly*20/100
     } 
      if (grossIncomeYearly <=1000) {
       setTax20Percent( "Your base for tax is 10%, you owe this country "+ grossIncomeYearly*10/100 + " $")
+      yearlyIncomeReduced = grossIncomeYearly*10/100
+
     } 
 
 
 
     if (childrenNumber >= 1)  {
       setChildrenTaxReduction("Your tax is reduced by 1% which is exactly "+ grossIncomeYearly*1/100 + " $")
+      childReduced = grossIncomeYearly*1/100
     } 
      if (childrenNumber <= 0) {
       setChildrenTaxReduction( "You have no reduction")
+      childReduced = 0
+
     } 
 
 
     
     if (propertyOwnership >= 1)  {
       setPropertyOwnershipTaxReduction("Your tax is increased by 1% which is exactly "+ grossIncomeYearly*1/100 + " $")
+      propertyReduced = grossIncomeYearly*1/100
     } 
      if (propertyOwnership <= 0) {
       setPropertyOwnershipTaxReduction( "You have no reduction")
+      propertyReduced = 0
     } 
-
 
 
     
     if (maritalStatus == "married")  {
       setMaritalStatusTaxReduction("Your tax is reduced by 2% which is exactly "+ grossIncomeYearly*2/100 + " $")
+      maritalReduced = grossIncomeYearly*2/100
+     
     } 
     if (maritalStatus == "single") {
       setMaritalStatusTaxReduction( "You have no reduction")
+      maritalReduced = 0
     } 
     if (maritalStatus == "widowOrWidower")  {
       setMaritalStatusTaxReduction("Your tax is reduced by 3% which is exactly "+ grossIncomeYearly*3/100 + " $")
+      maritalReduced = grossIncomeYearly*3/100
     } 
 
     console.log(newGrossIncomeYearly);
 
     
+
+    setTotalTax( grossIncomeYearly - ( yearlyIncomeReduced + childReduced + propertyReduced + maritalReduced) )
 
   }
 
@@ -85,7 +104,8 @@ export default function InputFormIncomeHandleSumbit(){
     setTax20Percent,
     setChildrenTaxReduction,
     setPropertyOwnershipTaxReduction,
-    setMaritalStatusTaxReduction
+    setMaritalStatusTaxReduction,
+    setTotalTax
   }
   
 
@@ -135,7 +155,7 @@ export default function InputFormIncomeHandleSumbit(){
           </tr>
           </tbody>    
         </table>
-        <h1> You owe exactly</h1>
+        <h1> You owe exactly{totalTax}</h1>
     </div>
     </div>
   )
