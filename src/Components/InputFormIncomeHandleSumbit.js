@@ -118,7 +118,7 @@ export default function InputFormIncomeHandleSumbit(){
   
 
   return (
-    <div className="flex-col max-w-5xl py-3 px-6">
+    <div className="flex-col max-w-5xl py-3  px-5">
     < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>
     
     <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
@@ -126,16 +126,16 @@ export default function InputFormIncomeHandleSumbit(){
         <table className=' table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr className='text-center	'>
-              <th  className="py-3 px-6">
+              <th  className="py-3 px-5">
                   Yearly income
               </th>
-              <th className="py-3 px-6">
+              <th className="py-3 px-5">
                   Number of children
               </th>
-              <th  className="py-3 px-6">
+              <th  className="py-3 px-5">
                   Property ownership
               </th>
-              <th  className="py-3 px-6"  >
+              <th  className="py-3 px-5"  >
                   Marital status
               </th>
             </tr>
@@ -147,19 +147,19 @@ export default function InputFormIncomeHandleSumbit(){
 
 
           < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
-          <td className='border  py-3 px-6' ><a className='float-right'>{grossIncomeYearly}</a></td>
-          <td className='border py-3 px-6 '> <a className='float-right'>{childrenNumber}</a></td>
-          <td className='border py-3 px-6'> <a className='float-right'>{propertyOwnership}</a></td>
-          <td className='border py-3 px-6'><a className='float-right' >{maritalStatus}</a></td>
+          <td className='border  py-3 px-5' ><a className='float-right'>{grossIncomeYearly}</a></td>
+          <td className='border py-3 px-5 '> <a className='float-right'>{childrenNumber}</a></td>
+          <td className='border py-3 px-5'> <a className='float-right'>{propertyOwnership}</a></td>
+          <td className='border py-3 px-5'><a className='float-right' >{maritalStatus}</a></td>
           </tr>
 
           < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
-          <td className='border  py-3 px-6'><a className='float-right'>{tax20percent}</a></td>
+          <td className='border  py-3 px-5'><a className='float-right'>{tax20percent}</a></td>
 
-          <td className='border py-3 px-6 '>
+          <td className='border py-3 px-5 '>
           <a className='float-right'>{childrenTaxReduction}</a></td>
-          <td className='border py-3 px-6'><a className='float-right'>{propertyOwnershipTaxReduction}</a></td>
-          <td className='border py-3 px-6'> <a className='float-right'>{maritalStatusTaxReduction}</a></td>
+          <td className='border py-3 px-5'><a className='float-right'>{propertyOwnershipTaxReduction}</a></td>
+          <td className='border py-3 px-5'> <a className='float-right'>{maritalStatusTaxReduction}</a></td>
           </tr>
           </tbody>    
         </table>
