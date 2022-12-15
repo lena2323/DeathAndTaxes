@@ -10,9 +10,7 @@ const commonConfig = require('./webpack.common');
 
 const prodConfig = {
   mode: 'production',
-  devServer: {
-    port: 8003,
-  },
+ 
   plugins: [
     new HtmlWebpackPlugin({
       template:
