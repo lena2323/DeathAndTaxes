@@ -5,14 +5,15 @@ import {InputFormIncomeYearly} from "./index";
 export default function InputFormIncomeHandleSumbit(){
   
 
-  const [grossIncomeYearly, setGrossIncomeYearly] = useState('')
+  const [grossIncomeYearly, setGrossIncomeYearly] = useState(0)
   const [childrenNumber, setChildrenNumber] = useState("")
   const [propertyOwnership, setPropertyOwnership] = useState("")
   const [maritalStatus, setMaritalStatus] = useState("")
 
-  const [tax20percent, setTax20Percent] = useState("")
-
-
+  const [tax20percent, setTax20Percent] = useState(0)
+  const [childrenTaxReduction, setChildrenTaxReduction] = useState("")
+  const [propertyOwnershipTaxReduction, setPropertyOwnershipTaxReduction] = useState(0)
+  const [maritalStatusTaxReduction, setMaritalStatusTaxReduction] = useState("")
 
   const handleSubmit = (event) =>{
     event.preventDefault();
@@ -22,21 +23,55 @@ export default function InputFormIncomeHandleSumbit(){
         childrenNumber,
         propertyOwnership,
         maritalStatus,
-        tax20percent
+        tax20percent,
+        childrenTaxReduction,
+        propertyOwnershipTaxReduction,
+        maritalStatusTaxReduction
     }
 
+    
+
+    if (grossIncomeYearly >= 1000)  {
+      setTax20Percent("Your base for tax is 20%, you owe this country "+ grossIncomeYearly*20/100 + " $")
+    } 
+     if (grossIncomeYearly <=1000) {
+      setTax20Percent( "Your base for tax is 10%, you owe this country "+ grossIncomeYearly*10/100 + " $")
+    } 
+
+
+
+    if (childrenNumber >= 1)  {
+      setChildrenTaxReduction("Your tax is reduced by 1% which is exactly "+ grossIncomeYearly*1/100 + " $")
+    } 
+     if (childrenNumber <= 0) {
+      setChildrenTaxReduction( "You have no reduction")
+    } 
+
+
+    
+    if (propertyOwnership >= 1)  {
+      setPropertyOwnershipTaxReduction("Your tax is increased by 1% which is exactly "+ grossIncomeYearly*1/100 + " $")
+    } 
+     if (propertyOwnership <= 0) {
+      setPropertyOwnershipTaxReduction( "You have no reduction")
+    } 
+
+
+
+    
+    if (maritalStatus == "married")  {
+      setMaritalStatusTaxReduction("Your tax is reduced by 2% which is exactly "+ grossIncomeYearly*2/100 + " $")
+    } 
+    if (maritalStatus == "single") {
+      setMaritalStatusTaxReduction( "You have no reduction")
+    } 
+    if (maritalStatus == "widowOrWidower")  {
+      setMaritalStatusTaxReduction("Your tax is reduced by 3% which is exactly "+ grossIncomeYearly*3/100 + " $")
+    } 
+
     console.log(newGrossIncomeYearly);
-    
-
 
     
-      if (grossIncomeYearly >= 1000)  {
-        setTax20Percent(grossIncomeYearly*20/100 +"lala")
-      } 
-      else if (grossIncomeYearly <=1000) {
-        setTax20Percent(grossIncomeYearly*10/100 +"blabla")
-      } 
-
 
   }
 
@@ -47,7 +82,10 @@ export default function InputFormIncomeHandleSumbit(){
     setChildrenNumber,
     setPropertyOwnership,
     setMaritalStatus,
-    setTax20Percent
+    setTax20Percent,
+    setChildrenTaxReduction,
+    setPropertyOwnershipTaxReduction,
+    setMaritalStatusTaxReduction
   }
   
 
@@ -82,23 +120,22 @@ export default function InputFormIncomeHandleSumbit(){
 
           < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
           <td className='border  py-3 px-6' ><a className='float-right'>{grossIncomeYearly}</a></td>
-          <td className='border py-3 px-6 '> <a className='float-right'></a></td>
-          <td className='border py-3 px-6'> <a className='float-right'></a></td>
-          <td className='border py-3 px-6'><a className='float-right' ></a></td>
+          <td className='border py-3 px-6 '> <a className='float-right'>{childrenNumber}</a></td>
+          <td className='border py-3 px-6'> <a className='float-right'>{propertyOwnership}</a></td>
+          <td className='border py-3 px-6'><a className='float-right' >{maritalStatus}</a></td>
           </tr>
 
           < tr className=' border text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 '>
-          <td className='border  py-3 px-6'>{tax20percent}</td>
+          <td className='border  py-3 px-6'><a className='float-right'>{tax20percent}</a></td>
 
           <td className='border py-3 px-6 '>
-          
-          <a className='float-right'></a></td>
-          <td className='border py-3 px-6'><a className='float-right'></a></td>
-          <td className='border py-3 px-6'> <a className='float-right'></a></td>
+          <a className='float-right'>{childrenTaxReduction}</a></td>
+          <td className='border py-3 px-6'><a className='float-right'>{propertyOwnershipTaxReduction}</a></td>
+          <td className='border py-3 px-6'> <a className='float-right'>{maritalStatusTaxReduction}</a></td>
           </tr>
           </tbody>    
         </table>
-        
+        <h1> You owe exactly</h1>
     </div>
     </div>
   )
