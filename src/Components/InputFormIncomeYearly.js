@@ -14,7 +14,7 @@ export default function InputFormIncomeYearly(props) {
 
   return (
     <div className='relative lg:px-8 font-philosopher flex-col items-center justify-center text-center lg:rounded-3xl   lg:max-w-xl lg:mx-auto lg:px-20'>
-      <div	class="lg:absolute inset-0 lg:bg-white  shadow-lg transform -skew-y-6 sm:skew-y-0 lg:-rotate-6 lg:rounded-3xl bg-gradient-to-r from-blue-300 to-blue-600  ">  
+      <div	class="lg:absolute inset-0 lg:bg-white  shadow-lg transform -skew-y-6 sm:skew-y-0 lg:-rotate-6 lg:rounded-3xl bg-gradient-to-r from-green-300 to-green-600  ">  
       </div>
 
       <div	class="lg:absolute inset-0 lg:bg-white  shadow-lg  lg:rounded-3xl lg:bg-white ">    
