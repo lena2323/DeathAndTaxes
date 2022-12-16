@@ -20,10 +20,12 @@ export default function InputFormIncomeYearly(props) {
       <div	class="lg:absolute inset-0 lg:bg-white  shadow-lg  lg:rounded-3xl lg:bg-white ">    
       </div>
       
-      <img src={beniscool} className="z-10	relative  py-10 mx-auto max-w-xs max-h-80	text-center"></img>
+      <img src={beniscool} className="z-10	relative  lg:py-10 mx-auto max-w-xs max-h-80	text-center"></img>
 
+      <div className='pt-5 lg:py-0'>
       <h1 className='font-philosopher z-10	relative text-center'> Only two things are certain, death and taxes...</h1>
-      <h2 className='font-philosopher z-10	relative text-left'>How much can you scrape for your own funeral?</h2>
+      <h2 className='font-philosopher z-10	relative text-center'>How much can you scrape for your own funeral?</h2>
+      </div>
 
       <form  onSubmit={handleSubmit} className="z-10	relative my-8 flex-col justify-between">
       <div className='flex my-4 justify-between  text-left '>
