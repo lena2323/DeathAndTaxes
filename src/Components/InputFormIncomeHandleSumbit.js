@@ -122,7 +122,6 @@ export default function InputFormIncomeHandleSumbit(){
     < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>
     
     <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
-        <h1></h1>
         <table className=' font-philosopher table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr className='text-center	'>

@@ -20,28 +20,28 @@ export default function InputFormIncomeYearly(props) {
       <div	class="lg:absolute inset-0 lg:bg-white  shadow-lg  lg:rounded-3xl lg:bg-white ">    
       </div>
       
-      <img src={beniscool} className="z-10	relative  py-10 mx-auto max-w-xs max-h-80	text-left"></img>
+      <img src={beniscool} className="z-10	relative  py-10 mx-auto max-w-xs max-h-80	text-center"></img>
 
-      <h1 className='font-philosopher z-10	relative text-left'> Only two things are certain, death and taxes...</h1>
+      <h1 className='font-philosopher z-10	relative text-center'> Only two things are certain, death and taxes...</h1>
       <h2 className='font-philosopher z-10	relative text-left'>How much can you scrape for your own funeral?</h2>
 
-      <form  onSubmit={handleSubmit} className="z-10	relative my-8 flex-col justify-between text-left">
+      <form  onSubmit={handleSubmit} className="z-10	relative my-8 flex-col justify-between">
       <div className='flex my-4 justify-between  '>
         <label>What is your yearly income?</label>
         <input type="number" min={1} max={1000000000000} required onChange={e => setGrossIncomeYearly(e.target.value)}></input>
       </div>
 
-      <div className='flex my-4 justify-between'>
+      <div className='flex my-4 justify-between text-left'>
         <label>How many children do you have?</label>
         <input type="number"  min={0} max={150} required onChange={e => setChildrenNumber(e.target.value)}></input>
       </div>
 
-      <div className='flex my-4 justify-between'>
+      <div className='flex my-4 justify-between text-left'>
         <label>How many properties do you own?</label>
         <input type="number" required min={0} max={100} onChange={e => setPropertyOwnership(e.target.value)} ></input>
       </div>
 
-      <div className='flex font-philosopher my-4 justify-between'>
+      <div className='flex font-philosopher my-4 justify-between text-left'>
         <label htmlFor="MaritalStatus">What is your marital status?</label>
         <select name='MaritalStatus' required onChange={e => setMaritalStatus(e.target.value)}>
           <option value="none" selected disabled hidden>Select an Option</option>
@@ -51,7 +51,7 @@ export default function InputFormIncomeYearly(props) {
         </select>
       </div>
 
-      < MainButton buttontext = "See results" className="font-philosopher"  />
+      < MainButton buttontext = "See results" className="font-philosopher "  />
 
       </form>
 
