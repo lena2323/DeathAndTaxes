@@ -142,7 +142,7 @@ export default function InputFormIncomeHandleSumbit(){
 
           </thead>
 
-          <tbody >
+          <tbody className="font-medium	">
           
 
 
