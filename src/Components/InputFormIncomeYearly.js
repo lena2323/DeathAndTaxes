@@ -20,12 +20,12 @@ export default function InputFormIncomeYearly(props) {
       <div	class="lg:absolute inset-0 lg:bg-white  shadow-lg  lg:rounded-3xl lg:bg-white ">    
       </div>
       
-      <img src={beniscool} className="z-10	relative  py-10 mx-auto max-w-xs max-h-80	"></img>
+      <img src={beniscool} className="z-10	relative  py-10 mx-auto max-w-xs max-h-80	text-left"></img>
 
-      <h1 className='font-philosopher z-10	relative '> Only two things are certain, death and taxes...</h1>
-      <h2 className='font-philosopher z-10	relative '>How much can you scrape for your own funeral?</h2>
+      <h1 className='font-philosopher z-10	relative text-left'> Only two things are certain, death and taxes...</h1>
+      <h2 className='font-philosopher z-10	relative text-left'>How much can you scrape for your own funeral?</h2>
 
-      <form  onSubmit={handleSubmit} className="z-10	relative my-8 flex-col justify-between ">
+      <form  onSubmit={handleSubmit} className="z-10	relative my-8 flex-col justify-between text-left">
       <div className='flex my-4 justify-between  '>
         <label>What is your yearly income?</label>
         <input type="number" min={1} max={1000000000000} required onChange={e => setGrossIncomeYearly(e.target.value)}></input>
