@@ -15,6 +15,15 @@ module.exports = {
         secondary: '#503D42',
         neutralbcg: '#F5FBEF'
       },
+      animation: {
+        wiggle: 'wiggle 2s ease-in-out',
+      }, 
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': {transform: 'translateY(250px)' },
+        },
+      },
     },
   },
   variants: {
