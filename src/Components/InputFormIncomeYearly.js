@@ -1,9 +1,7 @@
-import React from 'react'
-import { MainButton } from '../Components/index'
-/*import {beniscool} from "../images/pngwing.png"
+import React from 'react';
+import { MainButton } from '../Components/index';
+import beniscool from "./images/pngwing.png";
 
-<img src={beniscool}></img>
-*/
 
 
 export default function InputFormIncomeYearly(props) {
@@ -17,7 +15,8 @@ export default function InputFormIncomeYearly(props) {
   return (
     <div className='  flex-col items-center justify-center text-center '>
       <div></div>
-      
+      <img src={beniscool} ></img>
+
       <h1> Only two things are certain, death and taxes</h1>
       <h2>How much can you scrape for your own funeral?</h2>
 
