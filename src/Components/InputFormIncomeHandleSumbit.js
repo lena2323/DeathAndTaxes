@@ -14,24 +14,23 @@ export default function InputFormIncomeHandleSumbit(){
   const [childrenTaxReduction, setChildrenTaxReduction] = useState(0)
   const [propertyOwnershipTaxReduction, setPropertyOwnershipTaxReduction] = useState(0)
   const [maritalStatusTaxReduction, setMaritalStatusTaxReduction] = useState("")
-  const [totalTax, setTotalTax] = useState(0)
-  const [totalIncomeAfterTax, setTotalIncomeAfterTax] = useState(0)
   const [effectiveTaxRate, setEffectiveTaxRate] = useState(0)
   
+  let baseForBase
+
+  let yearlyIncomeReduced
+
+  let childForBase
+  let propertyForBase
+  let maritalForBase
   
-
-  const [yearlyIncomeReduced, setYearlyIncomeReduced] = useState(0)
-  const [baseForBase, setbaseForBase] = useState(0)
-
-  const [childForBase, setChildForBase] = useState(0)
-  const [propertyForBase, setPropertyForBase] = useState(0)
-  const [maritalForBase, setMaritalForBase] = useState(0)
-  
-
+  let totalTax
+  let totalIncomeAfterTax
 
   const handleSubmit = (event) =>{
     event.preventDefault();
 
+    
     const newGrossIncomeYearly = {
         grossIncomeYearly,
         childrenNumber,
@@ -42,84 +41,83 @@ export default function InputFormIncomeHandleSumbit(){
         propertyOwnershipTaxReduction,
         maritalStatusTaxReduction,
         totalTax,
-        baseForBase,
         totalIncomeAfterTax,
-        effectiveTaxRate,
-        childForBase,
-        propertyForBase,
-        maritalForBase,
-        yearlyIncomeReduced
+        effectiveTaxRate
+  
     }
 
     
+    
+    /*setChildForBase( (childrenNumber >= 1) ? 1 : 0)
+    setPropertyForBase( (propertyOwnership >= 1) ? 0 : 1)
+    setMaritalForBase(
+    (maritalStatus == "married") ? 1 : (maritalStatus == "single") ? 0 : (maritalStatus == "widow/Widower") ? 3 : 0)*/
 
     if (grossIncomeYearly >= 1000)  {
       setTax20Percent("Your base tax rate is 20%, you owe this country "+ grossIncomeYearly*20/100);
-      setYearlyIncomeReduced(grossIncomeYearly*20/100)
-      setbaseForBase(20)
-    } 
+      yearlyIncomeReduced = (grossIncomeYearly*20/100)
+      baseForBase =20
+        } 
      if (grossIncomeYearly <=1000) {
       setTax20Percent( "Your base tax rate is 10%, you owe this country "+ grossIncomeYearly*10/100 + " $");
-      setYearlyIncomeReduced(grossIncomeYearly*10/100)
-      setbaseForBase(10)
-
+      yearlyIncomeReduced = (grossIncomeYearly*10/100)
+      baseForBase = 10
     } 
 
 
 
     if (childrenNumber >= 1)  {
-      setChildForBase(1);
-      setChildrenTaxReduction("Your tax is reduced by 1% which is exactly "+ yearlyIncomeReduced*(baseForBase - (childForBase + propertyForBase + maritalForBase))/100 + " $")
-    
+      childForBase = 1
+      setChildrenTaxReduction("Your tax is reduced by 1% ")
     } 
      if (childrenNumber <= 0) {
-      setChildForBase(0);
+      childForBase = 0
       setChildrenTaxReduction( "You have no reduction")
     } 
 
 
     
     if (propertyOwnership >= 1)  {
-      setPropertyForBase(0);
       setPropertyOwnershipTaxReduction("You have no reduction")
-      
+      propertyForBase = 0
     } 
      if (propertyOwnership <= 0) {
-      setPropertyForBase(1);
-      setPropertyOwnershipTaxReduction( "Your tax is reduced by 1% which is exactly "+ yearlyIncomeReduced*(baseForBase - (childForBase + propertyForBase + maritalForBase))/100 + " $")
-      
+      setPropertyOwnershipTaxReduction( "Your tax is reduced by 1%" )
+      propertyForBase = 1
     } 
 
 
     
     if (maritalStatus == "married")  {
-      setMaritalForBase(1)      ; setMaritalStatusTaxReduction("Your tax is reduced by 2% which is exactly "+ yearlyIncomeReduced*(baseForBase - (childForBase + propertyForBase + maritalForBase))/100 + " $")
+   setMaritalStatusTaxReduction("Your tax is reduced by 2% ")
+   maritalForBase = 2
       
     } 
 
     if (maritalStatus == "single") {
-      setMaritalForBase(0) ;
-      maritalForBase = 0
+      
       setMaritalStatusTaxReduction( "You have no reduction")
+      maritalForBase = 0
     } 
 
     if (maritalStatus == "widow/Widower")  {
-      setMaritalForBase(1)     ;  setMaritalStatusTaxReduction("Your tax is reduced by 3% which is exactly "+ yearlyIncomeReduced*(baseForBase - (childForBase + propertyForBase + maritalForBase))/100 + " $")
-    
+   setMaritalStatusTaxReduction("Your tax is reduced by 3% ")
+   maritalForBase = 3
     } 
 
+  
     console.log(newGrossIncomeYearly);
 
-    
-
-    setTotalTax(  yearlyIncomeReduced - (childForBase + propertyForBase + maritalForBase) )
-
-    
-    setTotalIncomeAfterTax(grossIncomeYearly -  (yearlyIncomeReduced - (childForBase + propertyForBase + maritalForBase)))
 
     setEffectiveTaxRate(baseForBase - (childForBase + propertyForBase + maritalForBase))
   }
 
+
+  totalTax = grossIncomeYearly*effectiveTaxRate/100
+  console.log(totalTax)
+
+  
+  totalIncomeAfterTax = grossIncomeYearly - totalTax
 
   let grossIncomeYearlyData = {
     handleSubmit,
@@ -131,14 +129,7 @@ export default function InputFormIncomeHandleSumbit(){
     setChildrenTaxReduction,
     setPropertyOwnershipTaxReduction,
     setMaritalStatusTaxReduction,
-    setTotalTax,
-    setbaseForBase,
-    setTotalIncomeAfterTax,
-    setEffectiveTaxRate,
-    setChildForBase,
-    setPropertyForBase,
-    setMaritalForBase,
-    setYearlyIncomeReduced
+    setEffectiveTaxRate
   }
   
 
