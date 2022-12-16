@@ -63,35 +63,37 @@ export default function InputFormIncomeHandleSumbit(){
 
 
     if (childrenNumber >= 1)  {
-      setChildrenTaxReduction("Your tax is reduced by 1% which is exactly "+ grossIncomeYearly*1/100 + " $")
-      childReduced = yearlyIncomeReduced*1/100
       childForBase = 1
+      setChildrenTaxReduction("Your tax is reduced by 1% which is exactly "+ yearlyIncomeReduced*(baseForBase - (childForBase + propertyForBase + maritalForBase))/100 + " $")
+    
     } 
      if (childrenNumber <= 0) {
+      childForBase = 0
       setChildrenTaxReduction( "You have no reduction")
       childReduced = 0
-      childForBase = 0
     } 
 
 
     
     if (propertyOwnership >= 1)  {
+      propertyForBase = 0
+
       setPropertyOwnershipTaxReduction("You have no reduction")
       propertyReduced = 0
-      propertyForBase = 0
+      
     } 
      if (propertyOwnership <= 0) {
-      setPropertyOwnershipTaxReduction( "Your tax is reduced by 1% which is exactly "+ grossIncomeYearly*1/100 + " $")
-      propertyReduced = yearlyIncomeReduced*1/100
       propertyForBase = 1
+      setPropertyOwnershipTaxReduction( "Your tax is reduced by 1% which is exactly "+ yearlyIncomeReduced*(baseForBase - (childForBase + propertyForBase + maritalForBase))/100 + " $")
+      
     } 
 
 
     
     if (maritalStatus == "married")  {
-      setMaritalStatusTaxReduction("Your tax is reduced by 2% which is exactly "+ yearlyIncomeReduced*2/100 + " $")
-      maritalReduced = yearlyIncomeReduced*2/100
       maritalForBase = 2
+      setMaritalStatusTaxReduction("Your tax is reduced by 2% which is exactly "+ yearlyIncomeReduced*(baseForBase - (childForBase + propertyForBase + maritalForBase))/100 + " $")
+      
     } 
 
     if (maritalStatus == "single") {
@@ -101,9 +103,9 @@ export default function InputFormIncomeHandleSumbit(){
     } 
 
     if (maritalStatus == "widow/Widower")  {
-      setMaritalStatusTaxReduction("Your tax is reduced by 3% which is exactly "+ yearlyIncomeReduced*3/100 + " $")
-      maritalReduced = yearlyIncomeReduced*3/100
       maritalForBase = 3
+      setMaritalStatusTaxReduction("Your tax is reduced by 3% which is exactly "+ yearlyIncomeReduced*(baseForBase - (childForBase + propertyForBase + maritalForBase))/100 + " $")
+    
     } 
 
     console.log(newGrossIncomeYearly);
