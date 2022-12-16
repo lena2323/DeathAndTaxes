@@ -114,8 +114,7 @@ export default function InputFormIncomeHandleSumbit(){
 
 
   totalTax = grossIncomeYearly*effectiveTaxRate/100
-  console.log(totalTax)
-
+ 
   
   totalIncomeAfterTax = grossIncomeYearly - totalTax
 
