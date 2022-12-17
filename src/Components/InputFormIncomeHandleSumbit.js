@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {InputFormIncomeYearly} from "./index";
 
-
 export default function InputFormIncomeHandleSumbit(){
   
+  const [isVisible, setIsVisible] = useState(false)
 
   const [grossIncomeYearly, setGrossIncomeYearly] = useState(0)
   const [childrenNumber, setChildrenNumber] = useState(0)
@@ -42,16 +42,11 @@ export default function InputFormIncomeHandleSumbit(){
         maritalStatusTaxReduction,
         totalTax,
         totalIncomeAfterTax,
-        effectiveTaxRate
-  
+        effectiveTaxRate,
+        isVisible
     }
 
     
-    
-    /*setChildForBase( (childrenNumber >= 1) ? 1 : 0)
-    setPropertyForBase( (propertyOwnership >= 1) ? 0 : 1)
-    setMaritalForBase(
-    (maritalStatus == "married") ? 1 : (maritalStatus == "single") ? 0 : (maritalStatus == "widow/Widower") ? 3 : 0)*/
 
     if (grossIncomeYearly >= 1000)  {
       setTax20Percent("Your base tax rate is 20%, you owe this country "+ grossIncomeYearly*20/100);
@@ -107,7 +102,7 @@ export default function InputFormIncomeHandleSumbit(){
 
   
     console.log(newGrossIncomeYearly);
-
+    setIsVisible(true)
 
     setEffectiveTaxRate(baseForBase - (childForBase + propertyForBase + maritalForBase))
   }
@@ -128,7 +123,8 @@ export default function InputFormIncomeHandleSumbit(){
     setChildrenTaxReduction,
     setPropertyOwnershipTaxReduction,
     setMaritalStatusTaxReduction,
-    setEffectiveTaxRate
+    setEffectiveTaxRate,
+    setIsVisible
   }
   
 
@@ -136,7 +132,7 @@ export default function InputFormIncomeHandleSumbit(){
     <div className="flex-col max-w-5xl py-3  px-5 text-gray-800	">
     < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>
     
-    <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
+     {isVisible && <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
         <table className=' font-philosopher table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
           <thead className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400">
             <tr className='text-center	'>
@@ -178,7 +174,7 @@ export default function InputFormIncomeHandleSumbit(){
           </tbody>    
         </table>
         <h1 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h1>
-    </div>
+    </div>}
     </div>
   )
 }
