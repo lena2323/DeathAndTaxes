@@ -1,10 +1,10 @@
 import React from 'react'
-import {InputFormIncomeHandleSumbit} from './index'
+import { InputFormIncomeHandleSumbit } from './index'
 
 const MainCard = () => {
   return (
     <div>
-    <InputFormIncomeHandleSumbit />
+      <InputFormIncomeHandleSumbit />
     </div>
   )
 }
