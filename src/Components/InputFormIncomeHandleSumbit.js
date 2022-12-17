@@ -135,11 +135,11 @@ export default function InputFormIncomeHandleSumbit(){
 
 
   return (
-    <div className="flex-col max-w-5xl py-3  px-5 text-gray-800	">
+    <div className="flex-col max-w-5xl pt-3  px-5 text-gray-800	">
       { !isVisible && < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>}
       
       {isVisible && 
-        <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
+        <div className='overflow-x-auto relative shadow-md sm:rounded-lg  mb-5'>
           <table className=' font-philosopher table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
             <thead className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400">
               <tr className='text-center	'>
