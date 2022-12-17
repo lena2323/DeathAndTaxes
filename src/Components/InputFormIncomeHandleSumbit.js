@@ -54,12 +54,12 @@ export default function InputFormIncomeHandleSumbit(){
     
 
     if (grossIncomeYearly >= 1000)  {
-      setTax20Percent("Your base tax rate is 20%, you owe this country "+ grossIncomeYearly*20/100);
+      setTax20Percent("Your base tax rate is 20%, before reductions you owe this country "+ grossIncomeYearly*20/100);
       yearlyIncomeReduced = (grossIncomeYearly*20/100)
       baseForBase =20
         } 
      if (grossIncomeYearly <=1000) {
-      setTax20Percent( "Your base tax rate is 10%, you owe this country "+ grossIncomeYearly*10/100 + " $");
+      setTax20Percent( "Your base tax rate is 10%, before reductions you owe this country "+ grossIncomeYearly*10/100 + " $");
       yearlyIncomeReduced = (grossIncomeYearly*10/100)
       baseForBase = 10
     } 
@@ -182,8 +182,9 @@ export default function InputFormIncomeHandleSumbit(){
           </table>
 
           <div className="px-3 flex-col text-center justify-center align-center bg-white min-h-full">
-          <h3 className="text-center font-philosopher text-red-700 bg-white py-4 border-b"> Your can pay your tax monthly, so each month you gotta pay {totalTax/12}</h3>
+          
           <h3 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h3>
+          <h3 className="text-center font-philosopher text-red-700 bg-white py-4 border-b"> Your can even pay your tax monthly, {totalTax/12} per month to be exact.</h3>
           <MainButton onclick={refreshPage} buttontext="Calcualte again" />
           </div>
         </div>}
