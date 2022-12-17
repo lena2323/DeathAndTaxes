@@ -7,7 +7,7 @@ const openInNewTab = (url) => {
 
 const LandingPage = () => {
   return (
-    <div className='  flex items-center justify-center bg-neutralbcg min-h-screen max-w-screen'>
+    <div className='  px-3 flex items-center justify-center bg-neutralbcg min-h-screen max-w-screen'>
       <InputFormIncomeHandleSumbit/>
       <div className='fixed top-0 z-10 right-3 text-xs'>
         <MainButton
