@@ -164,26 +164,26 @@ export default function InputFormIncomeHandleSumbit(){
 
 
             < tr className='  border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
-            <td className='border py-5 px-3' ><a className='float-right'>{grossIncomeYearly}</a></td>
-            <td className='border py-5 px-3'> <a className='float-right'>{childrenNumber}</a></td>
-            <td className='border py-5 px-3'> <a className='float-right'>{propertyOwnership}</a></td>
-            <td className='border py-5 px-3'><a className='float-right' >{maritalStatus}</a></td>
+            <td className='border py-5 px-2' ><a className='float-right'>{grossIncomeYearly}</a></td>
+            <td className='border py-5 px-2'> <a className='float-right'>{childrenNumber}</a></td>
+            <td className='border py-5 px-2'> <a className='float-right'>{propertyOwnership}</a></td>
+            <td className='border py-5 px-2'><a className='float-right' >{maritalStatus}</a></td>
             </tr>
 
             < tr className=' border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
-            <td className='border  py-5 px-3'><a className='float-right'>{tax20percent}</a></td>
+            <td className='border text-center py-5 px-2'><a className='float-right'>{tax20percent}</a></td>
 
-            <td className='border py-5 px-3 '>
+            <td className='border text-center py-5 px-2 '>
             <a className='float-right'>{childrenTaxReduction}</a></td>
-            <td className='border py-5 px-3'><a className='float-right'>{propertyOwnershipTaxReduction}</a></td>
-            <td className='border py-5 px-3'> <a className='float-right'>{maritalStatusTaxReduction}</a></td>
+            <td className='border text-center py-5 px-2'><a className='float-right'>{propertyOwnershipTaxReduction}</a></td>
+            <td className='border text-center py-5 px-2'> <a className='float-right'>{maritalStatusTaxReduction}</a></td>
             </tr>
             </tbody>    
           </table>
 
-          <div className="flex-col text-center justify-center align-center bg-white">
+          <div className="px-3 flex-col text-center justify-center align-center bg-white">
           <h3 className="text-center font-philosopher text-red-700 bg-white py-4 border-b"> Your can pay your tax monthly, so each month you gotta pay {totalTax/12}</h3>
-          <h2 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h2>
+          <h3 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h3>
           <MainButton onclick={refreshPage} buttontext="Calcualte again" />
           </div>
         </div>}
