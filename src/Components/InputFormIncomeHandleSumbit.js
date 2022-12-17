@@ -128,7 +128,7 @@ export default function InputFormIncomeHandleSumbit() {
       {isVisible && (
         <div className='overflow-x-auto relative shadow-md sm:rounded-lg  mb-5'>
           <table className=' font-philosopher table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-            <thead className='text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400'>
+            <thead className='text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400'>
               <tr className='text-center	'>
                 <th className='py-6 px-3'>Yearly income</th>
                 <th className='py-6 px-3'>Number of children</th>
@@ -138,52 +138,61 @@ export default function InputFormIncomeHandleSumbit() {
             </thead>
 
             <tbody className='font-medium	'>
-              <tr className='  border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
-                <td className='border py-5 px-2'>
-                  <a className='float-right'>{grossIncomeYearly}</a>
+              <tr className=' text-center border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
+                <td className='border border-lime-300 py-5 px-2'>
+                  {grossIncomeYearly}
                 </td>
-                <td className='border py-5 px-2'>
-                  {' '}
-                  <a className='float-right'>{childrenNumber}</a>
+                <td className='border border-lime-300 py-5 px-2'>
+                 {childrenNumber}
                 </td>
-                <td className='border py-5 px-2'>
-                  {' '}
-                  <a className='float-right'>{propertyOwnership}</a>
+                <td className='border border-lime-300 py-5 px-2'>
+                 {propertyOwnership}
                 </td>
-                <td className='border py-5 px-2'>
-                  <a className='float-right'>{maritalStatus}</a>
+                <td className='border border-lime-300 py-5 px-2'>
+                  {maritalStatus}
                 </td>
               </tr>
 
               <tr className=' border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
-                <td className='border text-center py-5 px-2'>
-                  <a className='float-right'>{tax20percent}</a>
+                <td className='border border-lime-300 text-center py-5 px-2 border-b-0'>
+                  {tax20percent}
+                  </td>
+                <td className='border border-lime-300 text-center py-5 px-2 border-b-0'>
+                 {childrenTaxReduction}
                 </td>
-
-                <td className='border text-center py-5 px-2 '>
-                  <a className='float-right'>{childrenTaxReduction}</a>
+                <td className='border border-lime-300 text-center py-5 px-2 border-b-0'>
+                 {propertyOwnershipTaxReduction}
                 </td>
-                <td className='border text-center py-5 px-2'>
-                  <a className='float-right'>{propertyOwnershipTaxReduction}</a>
-                </td>
-                <td className='border text-center py-5 px-2'>
-                  {' '}
-                  <a className='float-right'>{maritalStatusTaxReduction}</a>
+                <td className='border border-lime-300 border-b-0 text-center py-5 px-2'>
+                 {maritalStatusTaxReduction}
                 </td>
               </tr>
+
+             
             </tbody>
+            <tr className='  text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
+                <td className='border border-red-700 text-center py-5 px-2'>
+                 Yearly: {totalTax} $
+                </td>
+                <td className='border border-red-700 text-center py-5 px-2 '>
+                  Monthly: {totalTax / 12} $
+                </td>
+                <td className='border border-red-700 text-center py-5 px-2'>
+                  Fortnightly: {(totalTax / 12)/2} $
+                </td>
+                <td className='border border-red-700 text-center py-5 px-2'>
+                  Weekly: {(totalTax / 12)/4} $
+                </td>
+              </tr>
           </table>
 
           <div className='px-3 flex-col text-center justify-center align-center bg-white min-h-full'>
             <h3 className='text-center font-philosopher text-red-700 bg-white py-6 border-b'>
-              {' '}
-              Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you
-              can keep {totalIncomeAfterTax}$
+            
+              Your effective tax rate is {effectiveTaxRate}% and yearly you owe exactly {totalTax}$... you
+              have {totalIncomeAfterTax}$ left to plan your funeral with.
             </h3>
-            <h3 className='text-center font-philosopher text-red-700 bg-white py-4'>
-              {' '}
-              You can even pay your tax monthly, {totalTax / 12} per month to be exact.
-            </h3>
+            
             <MainButton onclick={refreshPage} buttontext='Calculate again' />
           </div>
         </div>
