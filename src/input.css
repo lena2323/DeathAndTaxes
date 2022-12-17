@@ -10,4 +10,7 @@
       -webkit-appearance: none;
       margin: 0;
     }
+    html {
+      -webkit-tap-highlight-color: transparent;
+  }
   }
