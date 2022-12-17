@@ -135,7 +135,7 @@ export default function InputFormIncomeHandleSumbit(){
 
 
   return (
-    <div className="flex-col max-w-5xl pt-3  px-5 text-gray-800	">
+    <div className="flex-col max-w-5xl pt-3 px-2 text-gray-800	">
       { !isVisible && < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>}
       
       {isVisible && 
