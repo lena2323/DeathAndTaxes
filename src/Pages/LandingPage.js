@@ -9,7 +9,7 @@ const openInNewTab = url => {
 
 const LandingPage = () => {
   return (
-    <div className=' px-4 pt-10 flex items-center justify-center bg-neutralbcg min-h-screen' >
+    <div className=' px-4 flex items-center justify-center bg-neutralbcg min-h-screen' >
        < MainCard />
        <div className="fixed top-0 z-10 right-3 text-xs">
        <MainButton buttontext="See my portfolio" onclick={() => openInNewTab('https://jade-alpaca-59a262.netlify.app/')}/>
