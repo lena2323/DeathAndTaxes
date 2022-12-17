@@ -135,7 +135,7 @@ export default function InputFormIncomeHandleSumbit(){
 
 
   return (
-    <div className="flex-col max-w-5xl pt-3 px-2 text-gray-800	">
+    <div className="flex-col max-w-5xl pt-3 text-gray-800	">
       { !isVisible && < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>}
       
       {isVisible && 
@@ -181,7 +181,7 @@ export default function InputFormIncomeHandleSumbit(){
             </tbody>    
           </table>
 
-          <div className="px-3 flex-col text-center justify-center align-center bg-white">
+          <div className="px-3 flex-col text-center justify-center align-center bg-white min-h-full">
           <h3 className="text-center font-philosopher text-red-700 bg-white py-4 border-b"> Your can pay your tax monthly, so each month you gotta pay {totalTax/12}</h3>
           <h3 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h3>
           <MainButton onclick={refreshPage} buttontext="Calcualte again" />
