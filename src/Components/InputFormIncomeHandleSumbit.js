@@ -127,7 +127,7 @@ export default function InputFormIncomeHandleSumbit() {
 
       {isVisible && (
         <div className='overflow-x-auto relative shadow-md sm:rounded-lg  mb-5'>
-          <table className=' font-philosopher table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+          <table className=' font-philosopher table-auto md:table-fixed w-full max-h-screen text-sm text-left text-gray-500 dark:text-gray-400'>
             <thead className='text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400'>
               <tr className='text-center'>
                 <th className='py-6 px-3 bg-lime-300'>Yearly income</th>
@@ -157,7 +157,7 @@ export default function InputFormIncomeHandleSumbit() {
                 <td className=' border text-center py-5 px-2 border-b-0'>
                   {tax20percent}
                   </td>
-                <td className=' border  text-center py-5 px-2 border-b-0'>
+                <td className=' border text-center py-5 px-2 border-b-0'>
                  {childrenTaxReduction}
                 </td>
                 <td className=' border text-center py-5 px-2 border-b-0'>
