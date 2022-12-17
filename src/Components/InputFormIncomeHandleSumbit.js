@@ -173,7 +173,8 @@ export default function InputFormIncomeHandleSumbit(){
           </tr>
           </tbody>    
         </table>
-        <h1 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h1>
+        <h3 className="text-center font-philosopher text-red-700 bg-white py-4 border-b"> Your can pay your tax monthly, so each month you gotta pay {totalTax/12}</h3>
+        <h2 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h2>
     </div>}
     </div>
   )
