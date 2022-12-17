@@ -122,13 +122,13 @@ export default function InputFormIncomeHandleSumbit() {
   }
 
   return (
-    <div className='flex-col max-w-5xl py-3  px-5 text-gray-800	'>
+    <div className='flex-col max-w-5xl py-3 text-gray-800	'>
       {!isVisible && <InputFormIncomeYearly submitState={grossIncomeYearlyData} />}
 
       {isVisible && (
         <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
         <table className=' font-philosopher table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-          <thead className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400">
+          <thead className="text-xs text-gray-700  bg-white dark:bg-gray-700 dark:text-gray-400">
             <tr className='text-center	'>
               <th  className="py-6 px-3">
                   Yearly income
@@ -150,14 +150,14 @@ export default function InputFormIncomeHandleSumbit() {
           
 
 
-          < tr className='text-center   border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
+          < tr className='text-center   border text-xs text-gray-700  bg-white dark:bg-gray-700 dark:text-gray-400 '>
           <td className='border py-5 px-3' >{grossIncomeYearly}</td>
           <td className='border py-5 px-3'>{childrenNumber}</td>
           <td className='border py-5 px-3'> {propertyOwnership}</td>
           <td className='border py-5 px-3'>{maritalStatus}</td>
           </tr>
 
-          < tr className=' text-center border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
+          < tr className=' text-center border text-xs text-gray-700  bg-white dark:bg-gray-700 dark:text-gray-400 '>
           <td className='border  py-5 px-3'>{tax20percent}</td>
 
           <td className='border py-5 px-3 '>
@@ -168,16 +168,16 @@ export default function InputFormIncomeHandleSumbit() {
 
           <tr className=' text-center border text-xs text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 '>
                 <td className='border py-5 px-2'>
-                Yearly: {totalTax.toFixed(2)} $
+                Yearly:<br />{totalTax.toFixed(2)} $
                 </td>
                 <td className='border h-auto py-5 px-2'>
-                Monthly: {(totalTax / 12).toFixed(2)} $
+                Monthly:<br /> {(totalTax / 12).toFixed(2)} $
                 </td>
                 <td className='border h-auto py-5 px-2'>
-                Fortnightly: {((totalTax / 12)/2).toFixed(2)} $
+                Fortnightly:<br /> {((totalTax / 12)/2).toFixed(2)} $
                 </td>
                 <td className='border h-auto py-5 px-2'>
-                Weekly: {((totalTax / 12)/4).toFixed(2)} $
+                Weekly:<br /> {((totalTax / 12)/4).toFixed(2)} $
                 </td>
               </tr>
           </tbody>    
@@ -187,8 +187,8 @@ export default function InputFormIncomeHandleSumbit() {
           <div className='px-3 flex-col text-center justify-center align-center bg-white min-h-full'>
             <h3 className='text-center font-philosopher text-red-700 bg-white py-6 border-b'>
             
-              Your effective tax rate is {effectiveTaxRate}% and yearly you owe exactly {totalTax}$... you
-              have {totalIncomeAfterTax}$ left to plan your funeral with.
+              Your effective tax rate is {effectiveTaxRate}% and yearly you owe exactly {(totalTax).toFixed(2)}$... you
+              have {(totalIncomeAfterTax).toFixed(2)}$ left to plan your funeral with.
             </h3>
             
             <MainButton onclick={refreshPage} buttontext='Calculate again' />
