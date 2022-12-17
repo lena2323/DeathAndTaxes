@@ -1,5 +1,5 @@
 import React from 'react'
-import { MainCard, MainButton } from '../Components/index'
+import { InputFormIncomeHandleSumbit, MainButton } from '../Components/index'
 
 const openInNewTab = (url) => {
   window.open(url, '_blank', 'noopener,noreferrer')
@@ -7,8 +7,8 @@ const openInNewTab = (url) => {
 
 const LandingPage = () => {
   return (
-    <div className=' px-4 flex items-center justify-center bg-neutralbcg min-h-screen'>
-      <MainCard />
+    <div className=' px-4 flex items-center justify-center bg-neutralbcg min-h-screen max-w-screen'>
+      <InputFormIncomeHandleSumbit/>
       <div className='fixed top-0 z-10 right-3 text-xs'>
         <MainButton
           buttontext='See my portfolio'
