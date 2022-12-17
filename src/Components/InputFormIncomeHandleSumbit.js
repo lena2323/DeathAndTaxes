@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import {InputFormIncomeYearly} from "./index";
+import {InputFormIncomeYearly, MainButton} from "./index";
+
 
 export default function InputFormIncomeHandleSumbit(){
   
+  const refreshPage = ()=>{
+    window.location.reload();
+ }
   const [isVisible, setIsVisible] = useState(false)
 
   const [grossIncomeYearly, setGrossIncomeYearly] = useState(0)
@@ -26,6 +30,7 @@ export default function InputFormIncomeHandleSumbit(){
   
   let totalTax
   let totalIncomeAfterTax
+
 
   const handleSubmit = (event) =>{
     event.preventDefault();
@@ -105,14 +110,14 @@ export default function InputFormIncomeHandleSumbit(){
     setIsVisible(true)
 
     setEffectiveTaxRate(baseForBase - (childForBase + propertyForBase + maritalForBase))
+
   }
 
 
   totalTax = grossIncomeYearly*effectiveTaxRate/100
- 
-  
   totalIncomeAfterTax = grossIncomeYearly - totalTax
 
+  
   let grossIncomeYearlyData = {
     handleSubmit,
     setGrossIncomeYearly,
@@ -128,54 +133,60 @@ export default function InputFormIncomeHandleSumbit(){
   }
   
 
+
   return (
     <div className="flex-col max-w-5xl py-3  px-5 text-gray-800	">
-    < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>
-    
-     {isVisible && <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
-        <table className=' font-philosopher table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-          <thead className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400">
-            <tr className='text-center	'>
-              <th  className="py-6 px-3">
-                  Yearly income
-              </th>
-              <th className="py-6 px-3">
-                  Number of children
-              </th>
-              <th  className="py-6 px-3">
-                  Property ownership
-              </th>
-              <th  className="py-6 px-3"  >
-                  Marital status
-              </th>
+      { !isVisible && < InputFormIncomeYearly submitState={grossIncomeYearlyData}/>}
+      
+      {isVisible && 
+        <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
+          <table className=' font-philosopher table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+            <thead className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400">
+              <tr className='text-center	'>
+                <th  className="py-6 px-3">
+                    Yearly income
+                </th>
+                <th className="py-6 px-3">
+                    Number of children
+                </th>
+                <th  className="py-6 px-3">
+                    Property ownership
+                </th>
+                <th  className="py-6 px-3"  >
+                    Marital status
+                </th>
+              </tr>
+
+            </thead>
+
+            <tbody className="font-medium	">
+            
+
+
+            < tr className='  border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
+            <td className='border py-5 px-3' ><a className='float-right'>{grossIncomeYearly}</a></td>
+            <td className='border py-5 px-3'> <a className='float-right'>{childrenNumber}</a></td>
+            <td className='border py-5 px-3'> <a className='float-right'>{propertyOwnership}</a></td>
+            <td className='border py-5 px-3'><a className='float-right' >{maritalStatus}</a></td>
             </tr>
 
-          </thead>
+            < tr className=' border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
+            <td className='border  py-5 px-3'><a className='float-right'>{tax20percent}</a></td>
 
-          <tbody className="font-medium	">
-          
+            <td className='border py-5 px-3 '>
+            <a className='float-right'>{childrenTaxReduction}</a></td>
+            <td className='border py-5 px-3'><a className='float-right'>{propertyOwnershipTaxReduction}</a></td>
+            <td className='border py-5 px-3'> <a className='float-right'>{maritalStatusTaxReduction}</a></td>
+            </tr>
+            </tbody>    
+          </table>
 
-
-          < tr className='  border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
-          <td className='border py-5 px-3' ><a className='float-right'>{grossIncomeYearly}</a></td>
-          <td className='border py-5 px-3'> <a className='float-right'>{childrenNumber}</a></td>
-          <td className='border py-5 px-3'> <a className='float-right'>{propertyOwnership}</a></td>
-          <td className='border py-5 px-3'><a className='float-right' >{maritalStatus}</a></td>
-          </tr>
-
-          < tr className=' border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
-          <td className='border  py-5 px-3'><a className='float-right'>{tax20percent}</a></td>
-
-          <td className='border py-5 px-3 '>
-          <a className='float-right'>{childrenTaxReduction}</a></td>
-          <td className='border py-5 px-3'><a className='float-right'>{propertyOwnershipTaxReduction}</a></td>
-          <td className='border py-5 px-3'> <a className='float-right'>{maritalStatusTaxReduction}</a></td>
-          </tr>
-          </tbody>    
-        </table>
-        <h3 className="text-center font-philosopher text-red-700 bg-white py-4 border-b"> Your can pay your tax monthly, so each month you gotta pay {totalTax/12}</h3>
-        <h2 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h2>
-    </div>}
+          <div className="flex-col text-center justify-center align-center bg-white">
+          <h3 className="text-center font-philosopher text-red-700 bg-white py-4 border-b"> Your can pay your tax monthly, so each month you gotta pay {totalTax/12}</h3>
+          <h2 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h2>
+          <MainButton onclick={refreshPage} buttontext="Calcualte again" />
+          </div>
+        </div>}
     </div>
   )
 }

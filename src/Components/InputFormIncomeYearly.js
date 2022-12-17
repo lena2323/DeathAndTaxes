@@ -53,7 +53,7 @@ export default function InputFormIncomeYearly(props) {
         </select>
       </div>
 
-      < MainButton buttontext = "See results" className="font-philosopher "  />
+      < MainButton buttontext = "Calculate tax" className="font-philosopher "  />
 
       </form>
 
