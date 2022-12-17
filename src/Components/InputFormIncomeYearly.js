@@ -74,13 +74,13 @@ export default function InputFormIncomeYearly(props) {
 
         <div className='flex font-philosopher my-4 justify-between text-left gap-5 items-center'>
           <label htmlFor='MaritalStatus'>What is your marital status?</label>
-          <select
+          <select defaultValue={'default'}
             className='text-gray-800 bg-white border rounded py-3 px-3  hover:border-lime-300 focus:border-lime-400 shadow-md outline-0 select-none'
             name='MaritalStatus'
             required
             onChange={(e) => setMaritalStatus(e.target.value)}
           >
-            <option value='none' selected disabled hidden>
+            <option value='default'  disabled hidden>
               Select an Option
             </option>
             <option value='married'>Married</option>
