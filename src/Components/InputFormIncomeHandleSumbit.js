@@ -122,56 +122,67 @@ export default function InputFormIncomeHandleSumbit() {
   }
 
   return (
-    <div className='flex-col pt-3 max-w-screen text-gray-800	'>
+    <div className='flex-col max-w-5xl py-3  px-5 text-gray-800	'>
       {!isVisible && <InputFormIncomeYearly submitState={grossIncomeYearlyData} />}
 
       {isVisible && (
-        <div className='overflow-x-auto max-w-screen  relative shadow-md sm:rounded-lg mb-5'>
-          <table className=' font-philosopher table-auto  max-w-screen text-sm text-gray-500 dark:text-gray-400'>
-            <thead className='text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400'>
-              <tr className='text-center'>
-                <th className='py-6 px-1 bg-lime-300'>Yearly income</th>
-                <th className='py-6 px-1 h-auto'>Number of children</th>
-                <th className='py-6 px-1 h-auto'>Property ownership</th>
-                <th className='py-6 px-1 h-auto'>Marital status</th>
-              </tr>
-            </thead>
+        <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
+        <table className=' font-philosopher table-auto md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+          <thead className="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400">
+            <tr className='text-center	'>
+              <th  className="py-6 px-3">
+                  Yearly income
+              </th>
+              <th className="py-6 px-3">
+                  Number of children
+              </th>
+              <th  className="py-6 px-3">
+                  Property ownership
+              </th>
+              <th  className="py-6 px-3"  >
+                  Marital status
+              </th>
+            </tr>
 
-            <tbody className='font-medium	'>
-              <tr className=' text-center border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
-                <td className='border py-5 px-2'>
-                  {grossIncomeYearly}
-                </td>
-                <td className='border h-auto py-5 px-2'>
-                 {childrenNumber}
-                </td>
-                <td className='border h-auto py-5 px-2'>
-                 {propertyOwnership}
-                </td>
-                <td className='border h-auto py-5 px-2'>
-                  {maritalStatus}
-                </td>
-              </tr>
+          </thead>
 
-              <tr className=' border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
-                <td className='h-auto border text-center py-5 px-2 border-b-0'>
-                  {tax20percent}
-                  </td>
-                <td className='h-auto border text-center py-5 px-2 border-b-0'>
-                 {childrenTaxReduction}
-                </td>
-                <td className='h-auto border text-center py-5 px-2 border-b-0'>
-                 {propertyOwnershipTaxReduction}
-                </td>
-                <td className='h-auto border border-b-0 text-center py-5 px-2'>
-                 {maritalStatusTaxReduction}
-                </td>
-              </tr>
+          <tbody className="font-medium	">
           
-             
-            </tbody>
+
+
+          < tr className='text-center   border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
+          <td className='border py-5 px-3' >{grossIncomeYearly}</td>
+          <td className='border py-5 px-3'>{childrenNumber}</td>
+          <td className='border py-5 px-3'> {propertyOwnership}</td>
+          <td className='border py-5 px-3'>{maritalStatus}</td>
+          </tr>
+
+          < tr className=' text-center border text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 '>
+          <td className='border  py-5 px-3'>{tax20percent}</td>
+
+          <td className='border py-5 px-3 '>
+         {childrenTaxReduction}</td>
+          <td className='border py-5 px-3'>{propertyOwnershipTaxReduction}</td>
+          <td className='border py-5 px-3'> {maritalStatusTaxReduction}</td>
+          </tr>
+
+          <tr className=' text-center border text-xs text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 '>
+                <td className='border py-5 px-2'>
+                Yearly: {totalTax.toFixed(2)} $
+                </td>
+                <td className='border h-auto py-5 px-2'>
+                Monthly: {(totalTax / 12).toFixed(2)} $
+                </td>
+                <td className='border h-auto py-5 px-2'>
+                Fortnightly: {((totalTax / 12)/2).toFixed(2)} $
+                </td>
+                <td className='border h-auto py-5 px-2'>
+                Weekly: {((totalTax / 12)/4).toFixed(2)} $
+                </td>
+              </tr>
+          </tbody>    
+        </table>
            
-          </table>
 
           <div className='px-3 flex-col text-center justify-center align-center bg-white min-h-full'>
             <h3 className='text-center font-philosopher text-red-700 bg-white py-6 border-b'>

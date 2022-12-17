@@ -39,7 +39,7 @@ export default function InputFormIncomeYearly(props) {
             className=' w-20 text-sm text-gray-800 bg-white border rounded py-2 px-3 hover:border-lime-300 focus:border-lime-400 shadow-md outline-0 text-right select-none'
             type='number'
             min={1}
-            max={1000000000000}
+            max={1000000}
             placeholder='0'
             required
             onChange={(e) => setGrossIncomeYearly(e.target.value)}
