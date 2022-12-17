@@ -183,8 +183,8 @@ export default function InputFormIncomeHandleSumbit(){
 
           <div className="px-3 flex-col text-center justify-center align-center bg-white min-h-full">
           
-          <h3 className="text-center font-philosopher text-red-700 bg-white py-6"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h3>
-          <h3 className="text-center font-philosopher text-red-700 bg-white py-4 border-b"> You can even pay your tax monthly, {totalTax/12} per month to be exact.</h3>
+          <h3 className="text-center font-philosopher text-red-700 bg-white py-6 border-b"> Your effective tax rate is {effectiveTaxRate}% so you owe exactly {totalTax}$ so you can keep {totalIncomeAfterTax}$</h3>
+          <h3 className="text-center font-philosopher text-red-700 bg-white py-4"> You can even pay your tax monthly, {totalTax/12} per month to be exact.</h3>
           <MainButton onclick={refreshPage} buttontext="Calculate again" />
           </div>
         </div>}
